@@ -109,7 +109,7 @@ module.exports = {
 
                     _.each(products, function (val, key) {
                         if (val) {
-
+                            products[key]['_id']= products[key].id;
                             if (val && val.image && val.image[0]) {
 
                                 products[key]['isImageAvailable'] = 0;
