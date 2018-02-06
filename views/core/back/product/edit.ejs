@@ -35,14 +35,20 @@
 
 
                         <select id = "idCategory" name="idCategory" class="form-control">            
-
+                         
                     <% if (typeof categoryOption == 'object' && categoryOption) { %>
 
                     <% categoryOption.forEach(function(category){ %>
+                        <% if (category.idCategory==product.idCategory) { %> 
+                            <option selected value="<%= category.idCategory %>"><%= category.name %>
+                            </option>
+                            <% }  %>
 
+                                
+                <% if (category.idCategory!=product.idCategory) { %> 
                     <option value="<%= category.idCategory %>"><%= category.name %>
                     </option>
-
+                 <% }  %>
                     <% }) %>
 
                     <% } else { %>

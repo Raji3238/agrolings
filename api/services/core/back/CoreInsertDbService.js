@@ -144,6 +144,7 @@ console.log('data====',data)
                 var video = data.video;
                 var description = data.description;
                 var name = data.name;
+                var idCategory = data.idCategory;
 //                 var image = [];
 //                 image[0] = '/images/product/' + idProduct + '.png';
 // console.log('image',image)
@@ -156,6 +157,7 @@ console.log('data====',data)
                     description: description,
                     createdAt: createdAt,
                     updatedAt: updatedAt,
+                    idCategory:idCategory
                     //image: image
                 }
                 console.log('dataToInsert',dataToInsert)
