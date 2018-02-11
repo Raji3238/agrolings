@@ -75,7 +75,7 @@ module.exports = {
 
                     console.log('promise return value categoryList:', categoryList);
                     result.categoryList = categoryList;
-
+                    result.isShowHomeButton = false;
                     console.log('categry list',result)
                     return res.view(theme + 'index.ejs', result);
 
@@ -86,6 +86,7 @@ module.exports = {
             },
 
         ], function (err) {
+            result.isShowHomeButton = false;
             if (err) return res.serverError(err);
 
             return res.view(theme + 'index.ejs', result);

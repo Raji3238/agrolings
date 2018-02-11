@@ -7,6 +7,7 @@ module.exports.project = {
   version: '0.2.0',
   year: new Date().getFullYear(),
   website: 'http://google.com',
+  isShowHomeButton:false,
   currency: {
     position: 'FRONT', // FRONT / END
     exchange_rate: 1000,

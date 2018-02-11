@@ -69,6 +69,7 @@ module.exports = {
         var dataView = [];
         dataView.message = '';
         dataView.redirectUrl = redirectUrl;
+        result.isShowHomeButton = true;
         console.log('dataview',dataView,'result',result)
             return res.view(pathTemplateFrontCore + 'single-item.ejs',result);
         });
@@ -161,7 +162,7 @@ module.exports = {
             }
             result.query = req.query.name;
             result.showSearchMenu = 1;
-
+            result.isShowHomeButton = false;
 
             return res.view(theme + 'index.ejs', result);
         });

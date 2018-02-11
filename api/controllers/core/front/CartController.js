@@ -63,6 +63,7 @@ module.exports = {
         });
       }
     ], function (err, result) {
+      result.isShowHomeButton=true;
       if (err) return res.serverError (err);
 
       return res.view(pathTemplateFrontCore + 'cart/cart.ejs', result);
@@ -182,7 +183,7 @@ module.exports = {
       }
     ], function (err, result) {
       if (err) return res.serverError(err);
-
+      result.isShowHomeButton = true;
       return res.view(pathTemplateFrontCore + 'checkout/checkout.ejs', result);
     });
   },

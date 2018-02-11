@@ -2,11 +2,24 @@
     <nav class="navbar navbar-default navbar-inverse" data-spy="affix" data-offset-top="197">
 
         <ul class="nav" style="font-size: 18px">
+                <li style="float:right;">
+                        <a class="navbar-ymple" href="/cart">
+                            <i class="fa fa-fw fa-shopping-cart"></i> <%= __('Cart') %>
+                            <% if (this.cart) {
+                                this.cart.length
+                            } %>
+                        </a>
+                    </li>
+                    <li style="float:left;">
+                            <a class="navbar-ymple" href="/" style="color: #fff;">
+                                <i class="fa fa-fw fa-home" aria-hidden="true"></i> <%= sails.config.project.name %>
+                            </a>
+                        </li>
             <!-- <li class="navbar-ymple" style="float:left;">
                 <img src="/images/ymple/logo.png" alt="Smiley face" height="50" width="50"></a>
             </li> -->
             <% categoryList.forEach(function(category, i){ %>
-            <li class=" dropdown " style="float: left">
+            <li class=" dropdown " style="float: right">
                 <a href="/category/<%= category.idCategory %>/" class="navbar-ymple" role="button" aria-haspopup="true" aria-expanded="false"><%= category.name %></a>
 
                 <!--a href="/category/<%= category.idCategory %>/" class="dropdown-toggle navbar-ymple" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"><%= category.name %> <span class="caret"></span></a-->
@@ -22,6 +35,8 @@
             </li>
 
             <%})%>
+            
         </ul>
+        
     </nav>
 </div>

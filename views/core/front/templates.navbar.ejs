@@ -19,39 +19,6 @@
 
         <ul class="nav" style="font-size: 18px">
 
-           
-
-            <li style="float:left;">
-                <a class="navbar-ymple navbar-brand" href="/" style="color: forestgreen;">
-                    <i class="fa fa-fw fa-home" aria-hidden="true"></i> <%= sails.config.project.name %>
-                </a>
-            </li>
-
-
-
-            <li style="float:right;">
-                <a class="navbar-brand navbar-ymple" href="/cart">
-                    <i class="fa fa-fw fa-shopping-cart"></i> <%= __('shopping basket') %>
-                    <% if (this.cart) {
-                        this.cart.length
-                    } %>
-                </a>
-            </li>
-
-
-            <li class=" dropdown " style="float: right">
-                <a href="#" class="dropdown-toggle navbar-ymple" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ENG<span class="caret"></span></a>
-                <ul class="dropdown-menu">
-                    <li class=" dropdown">
-                        <a href="#" class="dropdown-toggle " data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">ES</a>
-                    </li>
-                    <li><a href="#">DE</a></li>
-
-                    <li><a href="#">FR</a></li>
-
-                </ul>
-            </li>
-
             <% if (this.admin) { %>
             <li class="dropdown nav-item">
                 <a href="/admin"><%= __('manager') %></a>
@@ -62,7 +29,7 @@
             <% if (typeof user !== 'object' && typeof admin !== 'object') { %>
 
             <li  style="float:right;">
-                <a class="navbar-brand navbar-ymple" href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i>
+                <a class="navbar-brand navbar-ymple" style="color:#42A5F5" href="/login"><i class="fa fa-sign-in" aria-hidden="true"></i>
                     <%= __('login') %>
                 </a>
 
@@ -131,17 +98,41 @@
             </li-->
 
             <% } %>
-
+            <li style="float:right;">
+                    <span class="navbar-brand navbar-ymple" style="color:#42A5F5">
+                        <i class="fa fa-phone">
+                        </i>
+                        <span class="nav-span">9566339965</span>
+                    </span>
+             </li>
+            <li style="float:right;">
+                    <span class="navbar-brand navbar-ymple" style="color:#42A5F5">
+                        <i class="fa fa-envelope">
+                        </i>
+                        <span class="nav-span">sales@nayamproducts.com</span>
+                    </span>
+                
+            </li>
+            <% if(isShowHomeButton) {%>
+                <li style="float:left;">
+                        <a class="navbar-ymple" href="/" style="color: #42A5F5;">
+                            <i class="fa fa-fw fa-home" aria-hidden="true"></i> <%= sails.config.project.name %>
+                        </a>
+                    </li>
+            <% } %>
             <% if (typeof showSearchMenu == 'number' && showSearchMenu == 1) { %>
 
             <li  style="float:right;">
 
             <form class="form-inline pull-xs-right navbar-form" role="search">
-                <input class="form-control" type="text" name="name" placeholder="<%= __('Enter a product name') %>">
-                <button class="btn btn-success-outline" type="submit"><%= __('Search') %></button>&nbsp;&nbsp;
+                <div class="input-group">  
+                    <input class="form-control" type="text" name="name" placeholder="<%= __('Enter a product name') %>">
+                    <span class="input-group-btn">
+                        <button class="btn btn-success-outline" type="submit"><%= __('Search') %></button>&nbsp;&nbsp;
+                    </span>
+                </div> 
             </form>
-
-                </li>
+            </li>
 
             <% } %>
         </ul>

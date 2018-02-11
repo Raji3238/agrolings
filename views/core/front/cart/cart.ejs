@@ -1,6 +1,6 @@
 <%include ../templates.navbar.ejs%>
 
-<br><br>
+
 
 <div class="container">
 
@@ -55,7 +55,7 @@
                         <td><%= sails.config.project.currency.symbol %><%= (product.price * product.quantity) | 'currency' %></td>
 
                         <td>
-                            <button class="btn btn-xs btn-primary" button-action="apply">APPLY</button>
+                            <button class="btn btn-xs btn-primary" button-action="apply" style="margin:4%">APPLY</button>
                             <button class="btn btn-xs btn-danger" button-action="delete">DELETE</button>
                         </td>
                     </tr>

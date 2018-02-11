@@ -157,7 +157,7 @@ console.log('data====',data)
                     description: description,
                     createdAt: createdAt,
                     updatedAt: updatedAt,
-                    idCategory:idCategory
+                    idCategory:Number(idCategory)
                     //image: image
                 }
                 console.log('dataToInsert',dataToInsert)
