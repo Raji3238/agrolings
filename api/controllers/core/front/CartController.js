@@ -95,13 +95,13 @@ module.exports = {
     var cart = req.session.cart;
     var id = req.params.id;
     var quantity = parseInt(req.query.quantity);
-
+    console.log('req.query.quantity',req.query.quantity)
     for ( var i in cart ) {
       if ( cart[i].id == id ) {
         req.session.cart[i].quantity = quantity;
       }
     }
-
+    console.log('cartcart',cart)
     return res.json(cart);
   },
 

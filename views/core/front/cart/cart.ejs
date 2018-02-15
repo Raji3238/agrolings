@@ -36,8 +36,9 @@
 
                         <td>
                             <select  type="text" class="form-control" name="quantity">
-
-                            <option value="1">1</option>
+                                <option selected value="<%= total %>"><%= total %>
+                                </option>
+                                <option value="1">1</option>
                             <option value="2">2</option>
                                 <option value="3">3</option>
                                 <option value="4">4 </option>
@@ -85,11 +86,12 @@
             var product_id = $(this).parent().parent().data('id');
 
             var quantity = $('select[name=quantity]').val();
-
+            console.log('ready apply')
             $.ajax({
                 type: 'PUT',
                 url: '/cart/apply/' + product_id + '?quantity=' + quantity,
                 success: function (data, status) {
+                    console.log('apply response',data,'status',status)
                     window.location = '/cart';
                     return;
                 },

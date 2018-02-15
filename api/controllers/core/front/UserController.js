@@ -172,6 +172,7 @@ module.exports = {
                             else { // login view with error message
                                 var dataView = [];
                                 dataView.message = 'user or password not correct';
+                                dataView.isShowHomeButton=true;
                                 return res.view(pathTemplateFrontCore + 'login.ejs', dataView);
                             }
 
@@ -235,7 +236,8 @@ module.exports = {
         var dataView = [];
         dataView.message = '';
         dataView.redirectUrl = redirectUrl;
-        return res.view(pathTemplateFrontCore + 'login.ejs');
+        dataView.isShowHomeButton=true;
+        return res.view(pathTemplateFrontCore + 'login.ejs',dataView);
 
     },
 
