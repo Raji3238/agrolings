@@ -75,16 +75,18 @@
 
 
     <% products.forEach(function(product, i){ %>
-
         <div class="col-sm-4 col-md-4 col-xs-12" style="display: inline-block;">
             <div class="ec-box">
                 <div class="ec-box-header"><%= product.name %></div>
-                <a href="/product/<%= product._id %>">
+                <% if (product.stock>0){ %>
+                    <a href="/product/<%= product._id %>">
+                <% }else { %>
+                    <a href="/product/<%= product._id %>"></a>
+                <% } %>
                     <% if (product.image.length){ %>
-
+                    
                     <img style="height: 200px;width: 90%;" class="img-rounded-ymple" src="/images/product/<%= product.idProduct %>/1.png">
-
-
+                    
 
                     <% }else { %>
 
@@ -106,6 +108,7 @@
                     <p class="ellipsis"> <%= product.description %> </p>
                     <div class="ec-box-footer">
                     <div>
+                            <% if (product.stock>0){ %>
                         <select class="" name="quantity" id = "quantity-<%= product._id %>">
                             <option value="1">1</option>
                             <option value="2">2</option>
@@ -120,12 +123,14 @@
                         </select>
 
 
-
+                        
                         <button data-id="<%= product._id %>"   data-role="add" class="btn btn-ar btn-success btn-sm pull-right"><i class="fa fa-shopping-cart"></i> <%= __('Add') %></button>
-
-
-
                         <button data-id="<%= product._id %>" data-role="buy"   class="btn btn-primary btn-sm"><%= __('Purchase') %></button>
+                        <% }else { %>
+                            <button id='outof-stock' class="btn btn-primary btn-sm"><%= __('Out of stock') %></button>   
+                         <% } %>
+
+                       
                     </div>
                         </div>
                     <br>
@@ -142,5 +147,10 @@
         <%}%>
 
 </div>
-    </div>
-
+ </div>
+<script>
+    var resetBtn = document.getElementById("outof-stock");
+    resetBtn.disabled = disabled;
+    var resetBtnImg = document.getElementById("detail-disabled");
+    resetBtnImg.disabled = disabled;
+</script>

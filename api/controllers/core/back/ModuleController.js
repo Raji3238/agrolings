@@ -197,12 +197,49 @@ module.exports = {
 
             }
 
-            result.templateToInclude = 'list_module';
-            result.pathToInclude = '../module/list.ejs';
-            result.idProduct = 0;
-            result.listCoreModule = '';
+            else if (nameModule == "inventory") {
 
-            return res.view(pathTemplateBackCore + 'commun-back/main.ejs', result);
+                var item = [{
+
+                    idModule: 0,
+                    category: nameModule,
+                    configuration: "",
+                    description: "",
+                    createAt: "",
+                    name: "inventory",
+                    isActive: 1
+                },
+                    {
+
+                        idModule: 0,
+                        category: nameModule,
+                        configuration: "",
+                        description: "",
+                        createAt: "",
+                        name: "stripe",
+                        isActive: 1
+                    }];
+
+                result.listModule = item;
+
+            }
+            if(nameModule== "inventory") {
+                result.templateToInclude = 'list_module';
+                result.pathToInclude = '../module/inventory.ejs';
+                result.idProduct = 0;
+                result.listCoreModule = '';
+    
+                return res.view(pathTemplateBackCore + 'commun-back/main.ejs', result);
+            }
+            else {
+                result.templateToInclude = 'list_module';
+                result.pathToInclude = '../module/list.ejs';
+                result.idProduct = 0;
+                result.listCoreModule = '';
+    
+                return res.view(pathTemplateBackCore + 'commun-back/main.ejs', result);
+            }
+            
         }
 
         CoreReadDbService.getListModuleOneCategory().then(function (data) {
@@ -421,7 +458,7 @@ module.exports = {
             }
 
             else {
-
+                console.log('else paypal')
                 CoreReadDbService.getConfigurationModule(nameModule).then(function (configurationModule) {
 
                     try {

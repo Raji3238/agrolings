@@ -46,7 +46,7 @@
     },
     stock: {
       type: 'INTEGER',
-      defaultsTo: -1 // 0 
+      defaultsTo: 0 // 0 
     },
     isSelling: {
       type: 'BOOLEAN',
@@ -70,6 +70,9 @@
       model: 'Category',
       // required: true
     },
+    stockAvilability:{
+      type: 'STRING'
+    }
 
 
   },

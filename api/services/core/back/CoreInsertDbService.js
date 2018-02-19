@@ -104,7 +104,8 @@ console.log('data====',data)
                     createdAt: createdAt,
                     updatedAt: updatedAt,
                     image: image,
-                    idCategory: parseInt(data.idCategory)
+                    idCategory: parseInt(data.idCategory),
+                    stockAvilability:'In-stock'
                 }
 
                 console.log('insert test2');
