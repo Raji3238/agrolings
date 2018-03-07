@@ -1,12 +1,12 @@
 // PROJECT SETTINGS
 
 module.exports.project = {
-  name: 'Agroolings',
+  name: 'Online vanigam',
   author: 'WASD Inc.',
-  description: 'OPEN SHOP for FLIT electronics.',
+  description: 'OPEN SHOP for crackers.',
   version: '0.2.0',
   year: new Date().getFullYear(),
-  website: 'http://google.com',
+  website: 'onlinevanigam.com',
   isShowHomeButton:false,
   currency: {
     position: 'FRONT', // FRONT / END
