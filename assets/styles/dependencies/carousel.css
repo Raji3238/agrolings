@@ -128,7 +128,7 @@ body {
 
 .bg-img {
     /* The image used */
-    background-image: url("../../img/demo/flaxseed.jpg");
+    background-image: url("../../img/demo/banner2.jpg");
 
     /* Full height */
     height: 100%; 
@@ -140,7 +140,7 @@ body {
 }
 .bg-img1 {
     /* The image used */
-    background-image: url("../../img/demo/oil-image2.jpg");
+    background-image: url("../../img/demo/banner1.jpg");
 
     /* Full height */
     height: 100%; 
@@ -152,7 +152,7 @@ body {
 }
 .bg-img2 {
     /* The image used */
-    background-image: url("../../img/demo/chekku.jpg");
+    background-image: url("../../img/demo/banner3.jpg");
 
     /* Full height */
     height: 100%; 
